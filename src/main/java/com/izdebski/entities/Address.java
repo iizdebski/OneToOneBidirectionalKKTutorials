@@ -19,6 +19,9 @@ public class Address {
     @Column(name = "pin_code")
     private Long pincode;
 
+    @OneToOne(mappedBy = "address")
+    private Employee employee;
+
     public Integer getAddressId() {
         return addressId;
     }

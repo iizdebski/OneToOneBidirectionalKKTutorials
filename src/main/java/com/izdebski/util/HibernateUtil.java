@@ -1,7 +1,5 @@
 package com.izdebski.util;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -32,21 +30,6 @@ public class HibernateUtil {
                 }
             }
         }
-    }
-    public static Session getSession() throws HibernateException {
-
-        Session retSession=null;
-        try {
-            retSession = sessionFactory.openSession();
-        }catch(Throwable t){
-            System.err.println("Exception while getting session.. ");
-            t.printStackTrace();
-        }
-        if(retSession == null) {
-            System.err.println("session is discovered null");
-        }
-
-        return retSession;
     }
     //Utility method to return SessionFactory
     public static SessionFactory getSessionFactory() {

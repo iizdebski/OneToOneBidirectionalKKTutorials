@@ -19,16 +19,16 @@ CREATE TABLE ADDRESS(
 
 DROP TABLE IF EXISTS EMPLOYEE;
 CREATE TABLE EMPLOYEE(
-                       EMPLOYEE_ID INTEGER NOT NULL
-                         AUTO_INCREMENT PRIMARY KEY,
-                       ADDRESS_ID INTEGER,
-                       EMPLOYEE_NAME VARCHAR(200) NOT NULL,
-                       EMAIL VARCHAR(255),
-                       DATE_OF_JOIN TIMESTAMP,
-                       SALARY DOUBLE PRECISION,
-                       CONSTRAINT EMPLOYEE_ID_UNIQUE
-                         UNIQUE (EMPLOYEE_ID),
-                       FOREIGN KEY(ADDRESS_ID) REFERENCES ADDRESS(ADDRESS_ID)
+                            EMPLOYEE_ID INTEGER NOT NULL
+                            AUTO_INCREMENT PRIMARY KEY,
+                            ADDRESS_ID INTEGER,
+                            EMPLOYEE_NAME VARCHAR(200) NOT NULL,
+                            EMAIL VARCHAR(255),
+                            DATE_OF_JOIN TIMESTAMP,
+                            SALARY DOUBLE PRECISION,
+                            CONSTRAINT EMPLOYEE_ID_UNIQUE
+                            UNIQUE (EMPLOYEE_ID),
+                            FOREIGN KEY(ADDRESS_ID) REFERENCES ADDRESS(ADDRESS_ID)
 )
   ENGINE = innoDB
   DEFAULT CHARACTER SET = utf8
